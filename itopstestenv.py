@@ -7,14 +7,14 @@ count89 = 0
 count1000 = 0
 
 #loc="d:\\work\\files\\excel\\tests.xlsx"
-#loc="d:\\work\\testsetup\\SolarWinds.xlsx"
+#loc="d:\\work\\testsetup\\SolarWinds - Test Data.xlsx"
 loc="/home/mluser/ITOps/loadtest/SolarWinds.xlsx"
 wb = xlrd.open_workbook(loc)
 #gmail_users = ['pttest2107@gmail.com','pttest2108@gmail.com','pttest2110@gmail.com','pttest2111@gmail.com']
 #gmail_pwds = ['lemkkpubuelochez','wbruvrdafcuvrozw','vexvfgjsoiytwmph','xntdzxdwxlvdispt']
 #to = ['autops.demo@gmail.com']
-#to = ['ranjith.mnair@ust-global.com']
-to = ['SmartOpsQAinbound@ust-global.com']
+to = ['ranjith.mnair@ust-global.com']
+#to = ['SmartOpsQAinbound@ust-global.com']
 gmail_users = ['sajumust@gmail.com','smartops.ustglobal@gmail.com','smartops.privateuser@gmail.com','smartops.privateuser1@gmail.com','smartops.privateuser2@gmail.com','smartops.privateuser3@gmail.com','smartops.privateuser4@gmail.com','smartops.privateuser5@gmail.com','smartops.privateuser6@gmail.com','smartops.privateuser7@gmail.com','pttest2107@gmail.com','pttest2108@gmail.com','pttest2110@gmail.com','smartops.privateuser8@gmail.com']
 gmail_pwds = ["ebojculpglcppane","sfyfxezhiskzuzse","iznzzmruhznaurcl","dxcmpsapwvzvttfw","gegubbocaysfydfk","jufjapqviylumpdr","agaslvhekopjddps","nqazexcgocwtierx","sotajwfaooprdmmv","vlvdsbjgbnlmdrui","lemkkpubuelochez","wbruvrdafcuvrozw","vexvfgjsoiytwmph","enkrtupebpmxvudu"]
 gmail_status={}
@@ -92,7 +92,7 @@ def generatemsg(alert):
          <html>
            <head></head>
            <body>
-             Alert Message: [TEMP123 %s] %s</br> 
+             Alert Message: [TESTDEF %s] %s</br> 
              Alert Name: %s</br>
              Alert Severity: %s</br>
              Alert Time: %s,</br>
@@ -142,8 +142,8 @@ def prepareemail(alerts,simulate):
         if(emailcounter == len(gmail_users)):
             emailcounter = 0
         smtpserver = getsmtp(emailcounter)
-       else:
-        i = i + 1
+       #else:
+       i = i + 1
    else: 
        return None
 def getsmtp(emailcounter=0):
